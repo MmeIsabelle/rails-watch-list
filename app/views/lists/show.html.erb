@@ -1,7 +1,7 @@
 <%= render 'shared/banner' %>
 
 <%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
-<div>
+<div class = cards>
   <% @list.movies.each do |movie| %>
     <img src="<%= movie.poster_url %>" alt="movie poster" width="120px">
     <p><%= movie.title %></p>
