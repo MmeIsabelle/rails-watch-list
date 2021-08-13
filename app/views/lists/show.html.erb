@@ -1,1 +1,9 @@
 <h1><%= @list.name %></h1>
+<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
+<div>
+  <% @list.movies.each do |movie| %>
+    <img src="<%= movie.poster_url %>" alt="movie poster" width="120px">
+    <p><%= movie.title %></p>
+    <%= link_to 'Delete form list', bookmark_path(@list.bookmarks.first.id), method: "delete" %>
+  <% end %>
+</div>
