@@ -3,7 +3,9 @@
     <h1>My lists</h1>
   </div>
 </div>
-<%= link_to 'Create a movie list', new_list_path %>
+<div class="btn btn-outline-secondary m-3">
+  <%= link_to 'Create a movie list', new_list_path %>
+</div>
 <div class="cards">
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do  %>

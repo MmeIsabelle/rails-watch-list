@@ -1,11 +1,20 @@
 <%= render 'shared/banner' %>
-
-<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
-<div class = cards>
-  <% @list.movies.each do |movie| %>
-    <img src="<%= movie.poster_url %>" alt="movie poster" width="120px">
-    <p><%= movie.title %></p>
-    <p><%= movie.overview %></p>
-    <%= link_to 'Delete form list', bookmark_path(@list.bookmarks.first.id), method: "delete" %>
-  <% end %>
+<div class="container">
+  <div class="btn btn-outline-secondary m-3">
+    <%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
+  </div>
+  <div class="cards">
+    <% @list.movies.each do |movie| %>
+      <div class="card-movie m-3">
+          <img src="<%= movie.poster_url %>" alt="movie poster" width="120px">
+          <div class="card-movie-info m-2">
+            <h2><%= movie.title %></h2>
+            <p><%= movie.overview %></p>
+            <div class="btn btn-outline-secondary btn-sm my-1">
+              <%= link_to 'Delete form list', bookmark_path(@list.bookmarks.first.id), method: "delete" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
 </div>
